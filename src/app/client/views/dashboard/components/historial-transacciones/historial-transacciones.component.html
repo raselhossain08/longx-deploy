@@ -1,0 +1,121 @@
+<div class="p-5 overflow-hidden main">
+    <div class="p-7 transaction-history">
+        <!-- top bar -->
+          <div class="top-bar">
+              <h2 class="py-4">Transaction History</h2>
+              <div class="flex items-center filter">
+                  <div class="relative w-1/4 mr-5 select-btn">
+                      <button type="button" class="flex items-center justify-between w-full px-4 rounded-lg btn" (click)="isOpen=!isOpen">
+                        <span>{{BankName}}</span>
+                        <i class="fa-solid" [ngClass]="isOpen? 'fa-angle-up':'fa-angle-down'"></i>
+                      </button>
+                      <div class="absolute left-0 right-0 w-full p-4 rounded-lg dropdown-menu SelectBank-drop"
+                      [ngClass]="isOpen? 'active':''" aria-labelledby="triggerId">
+                      <div *ngFor="let item of BankList">
+                        <button class="dropdown-item" type="button" (click)="BankNameChange($event)">{{item.name}}</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-1/4 select-btn">
+                    <button type="button" class="flex items-center justify-between w-full px-4 rounded-lg btn date-btn">
+                      <input matInput [matDatepicker]="picker" placeholder="Date Range" ngClass="w-full h-3/4 focus-within:border-0 px-4">
+                      <span></span>
+                      <mat-datepicker-toggle matIconSuffix [for]="picker" class="text-white">
+                        <i class="fa-regular fa-calendar"></i>
+                      </mat-datepicker-toggle>
+
+                    </button>
+                    <mat-datepicker #picker></mat-datepicker>
+                </div>
+              </div>
+          </div>
+          <!-- transaction Table -->
+          <div class="py-8 transaction-table">
+
+              <div class="flex transaction-table-head">
+                <div class="w-3/12 Coin">
+                  <p>Coin</p>
+                </div>
+                <div class="w-3/12 text-center Type">
+                  <p>Type</p>
+                </div>
+                <div class="w-2/12 text-center Date">
+                  <p>Date</p>
+                </div>
+                <div class="w-2/12 text-center Amount">
+                  <p>Amount</p>
+                </div>
+                <div class="w-1/12 text-center State">
+                  <p>State</p>
+                </div>
+                <div class="w-1/12 text-center State">
+                </div>
+              </div>
+              <div *ngFor="let items of history">
+                <div class="flex items-center py-5 transaction-table-body">
+
+                  <div class="w-3/12 text-center coin">
+                      <div class="flex ">
+                          <div class="flex items-center justify-center coin-box">
+                            <img [src]="items.flag" alt="chile">
+                          </div>
+                          <div class="pl-3 coin-content">
+                            <h4>{{items.coinName}}</h4>
+                            <p>{{items.coinSubName}}</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="w-3/12 text-center type">
+                    <p [class]="items.typeBg">{{items.type}}</p>
+                  </div>
+                  <div class="w-2/12 text-center Date">
+                    <p>{{items.date}}</p>
+                  </div>
+                  <div class="w-2/12 text-center Amount">
+                    <p>{{items.amount}}</p>
+                  </div>
+                  <div class="w-1/12 text-center State">
+                    <p [class]="items.stateC">{{items.state}}</p>
+                  </div>
+                  <div class="w-1/12 text-center State">
+                    <button type="button"> <i class="fa-solid fa-ellipsis"></i></button>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+    </div>
+
+    <div class="py-6 pagination">
+      <div class="flex">
+          <div class="w-5/12">
+              <div class="flex items-center">
+                <p class="mx-4 showing">Showing</p>
+                <div class="form-group">
+                  <button mat-button [matMenuTriggerFor]="menu" ngClass="pageBtn"><span class="mr-4">7</span> <i class="fa-solid fa-angle-down"></i></button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>10</button>
+                    <button mat-menu-item>20</button>
+                  </mat-menu>
+                </div>
+                <p class="mx-4 showing">entries of 430 entries</p>
+              </div>
+          </div>
+          <div class="w-7/12">
+            <div class="flex items-center justify-end page-btn">
+                <button type="button" class="flex items-center justify-center mx-2">
+                  <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <button type="button" class="flex items-center justify-center mx-2 active">1</button>
+                <button type="button" class="flex items-center justify-center mx-2">2</button>
+                <button type="button" class="flex items-center justify-center mx-2">3</button>
+                <button type="button" class="flex items-center justify-center mx-2">...</button>
+                <button type="button" class="flex items-center justify-center mx-2">20</button>
+                <button type="button" class="flex items-center justify-center mx-2">
+                  <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>

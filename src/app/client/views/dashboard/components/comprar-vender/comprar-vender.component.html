@@ -1,0 +1,229 @@
+<div class="p-5 compare-area">
+  <div class="flex">
+    <div class="w-4/12 md:p-2 lg:p-2 2xl:p-4">
+      <div class="statistics-right">
+        <div class=" exchange-bar">
+          <div class="flex items-center w-full top-btn-group">
+            <button type="button" class="btn" (click)=" withdraw()"><span>Comprar</span></button>
+            <button type="button" class="mx-1 btn2" (click)=" withdraw()"><span>Vender</span> </button>
+            <button type="button" class="btn3"> <span class="ml-5">Exchange</span> </button>
+          </div>
+          <div class="flex flex-col items-start justify-between p-5 compare-market">
+            <div class="flex flex-col w-full h-full form-group">
+              <label for="total">Total</label>
+              <div class="relative w-full">
+                <input type="text" name="total" id="Total" class="w-full form-control" [placeholder]="usdtPrice " [(ngModel)]="compareUsdt" (change)="compareUsdtPrice ($event)">
+                <button type="button" class="absolute top-0 right-0 h-full ">
+                  <img src="assets/logos/usdt.svg" alt="usdt" class="mx-2">
+                  USDT
+                </button>
+              </div>
+            </div>
+            <div class="flex items-center justify-start w-full h-full py-4">
+              <div class=" divider"></div>
+              <div class="flex justify-center w-1/4 mx-2 swap"><img src="assets/icons/Swap.svg" alt="Swap"></div>
+              <div class="divider"></div>
+            </div>
+            <div class="flex flex-col w-full h-full mb-4 form-group">
+              <label for="total">Total</label>
+              <div class="relative w-full">
+                <input type="text" name="total" id="Total" class="w-full form-control"  [placeholder]="clpPrice " [(ngModel)]="compareClp" (change)="compareClpPrice ($event)">
+                <button type="button" class="absolute top-0 right-0 h-full ">
+                  <img src="assets/flag/chile.svg" alt="usdt" class="mx-2">
+                  CLP
+                </button>
+              </div>
+            </div>
+            <!-- Percentage -->
+            <div class="w-full h-full py-4 percentage">
+              <h5 class="py-3">Porcentaje</h5>
+              <div class="w-full percentage-line ">
+                <div class="flex items-center justify-start w-full">
+                  <p class="round-shape"></p>
+                  <div class="divider"></div>
+                  <p class="round-shape"></p>
+                  <div class="divider"></div>
+                  <p class="round-shape active"></p>
+                  <div class="divider"></div>
+                  <p class="round-shape"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment methods -->
+            <div class="w-full payment-methods ">
+              <div class="w-full form-group">
+                <label for="paymentMethods">Metedos de Page</label>
+                 <div class="relative ">
+                  <button type="button" class="flex items-center justify-between w-full mt-4">
+                    <div class="flex items-center w-3/4 ">
+                      <img src="assets/logos/chile.svg" alt="">
+                      <p class="mx-2">Seleccionar método</p>
+                    </div>
+                    <div class="flex justify-end w-1/4 pr-1">
+                      <div class="cursor-pointer arrow" (click)="currencyDrop=!currencyDrop">
+                        <i class="fa-solid fa-angle-down"></i>
+                      </div>
+                    </div>
+                </button>
+                   <div class="absolute flex-col drop-down" *ngIf="currencyDrop">
+                    <h2 class="p-3">Seleccione el método de pago </h2>
+                    <button type="button" class="flex items-center justify-start active" (click)="currencyDrop=false;withdraw()" >
+                      <p>CLP  en billitera</p>
+                    </button>
+                    <button type="button" class="flex items-center justify-start " (click)="currencyDrop=false;deposit()">
+                      <p>DEPÓSITO CLP</p>
+                    </button>
+                  </div>
+                 </div>
+              </div>
+            </div>
+            <!-- change rate -->
+            <div class="py-4 change-rate">
+              <div class="flex items-center mb-3">
+                  <div class="mr-5 shape"></div>
+                  <p>1 USDT = <span> 5CLP</span></p>
+              </div>
+              <div class="flex items-center">
+                <div class="mr-5 shape"></div>
+                <p>Exchange Fee = <span> $2</span></p>
+              </div>
+            </div>
+            <!-- Exchange btn -->
+
+            <div class="h-full py-4 exchange-btn" (click)="visible=true">
+              <button type="button" class="btn">Exchange</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 chart-area">
+        <div class="flex items-end justify-start p-4 pt-6 mt-3 chart-file chart-pie">
+          <div class="w-7/12 h-full">
+            <div class="relative chartBox">
+              <apx-chart ngClass="chart-box z-10 relative" [series]="chartOptions.series!" [chart]="chartOptions.chart!"
+                [labels]="chartOptions.labels!" [responsive]="chartOptions.responsive!" [fill]="chartOptions.fill!"
+                [stroke]="chartOptions.stroke!" [tooltip]="chartOptions.tooltip!"
+                [legend]="chartOptions.legend!"></apx-chart>
+              <div class="absolute top-0 text-white shape">
+                <div class="border_shape">
+                  <p>Statistics</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-5/12 h-full">
+            <div class="flex chart-btn">
+              <div class="flex items-center buy">
+                <div class="mx-2 buyBg"></div>
+                <p>Retiros</p>
+              </div>
+              <div class="flex items-center px-2 Sell">
+                <div class="mx-2 SellBg"></div>
+                <p>Depositos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-8/12 md:p-2 lg:p-2 2xl:p-4">
+        <!-- currency-bar -->
+        <div class="p-5 currency-bar">
+          <div class="flex items-center justify-start-between">
+            <div class="w-2/4 currency-drop">
+              <h3>Estadisticas de comercio</h3>
+            </div>
+            <div class="flex items-start justify-end w-2/4 currency-btn-group">
+              <button type="button" class="btn active"> 1H </button>
+              <button type="button" class="btn"> 3H </button>
+              <button type="button" class="btn"> 1D </button>
+              <button type="button" class="btn"> 1W </button>
+              <button type="button" class="btn"> 1M </button>
+            </div>
+          </div>
+        </div>
+        <div class="mb-4 comapare-chart">
+          <div class="chart-area" >
+            <div class="chart-file2">
+              <div id="chart">
+                <apx-chart
+                  [series]="chartOptions2.series!"
+                  [chart]="chartOptions2.chart!"
+                  [xaxis]="chartOptions2.xaxis!"
+                  [stroke]="chartOptions2.stroke!"
+                  [tooltip]="chartOptions2.tooltip!"
+                  [dataLabels]="chartOptions2.dataLabels!"
+                  [markers]="chartOptions2.markers!"
+                  [fill]="chartOptions2.fill!"
+                ></apx-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="px-6 py-5 transaction-history">
+            <div class="flex justify-between top-text">
+              <p>Comercio Recente</p>
+              <button>View More</button>
+            </div>
+            <div *ngFor="let items of history" class="">
+              <div class="flex items-center py-2 transaction-table-body">
+                <div class="w-3/12 text-center coin">
+                  <div class="flex items-center">
+                    <div class="flex items-center justify-center coin-box">
+                      <img [src]="items.flag" alt="chile" />
+                    </div>
+                    <div class="pl-3 coin-content">
+                      <h4>{{ items.coinName }}</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-3/12 text-center type">
+                  <p [class]="items.typeBg">{{ items.type }}</p>
+                </div>
+                <div class="w-3/12 text-center Date">
+                  <p>{{ items.time }}</p>
+                </div>
+
+                <div class="w-3/12 text-center State">
+                  <p [class]="items.stateC">{{ items.state }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-area">
+  <p-dialog header="Exchange" [(visible)]="visible" [modal]="true" [style]="{ width: '30vw' }" [draggable]="false" [resizable]="false">
+    <div class="modal ">
+      <div class="p-5 modal-content">
+          <div class="py-10 form">
+              <h4 class="py-5 title">Operacion en progreso</h4>
+              <div class="mb-4 convert">
+                  <h2>USDT/CLP </h2>
+              </div>
+              <div class="mb-4 convert-value">
+                  <h2>
+                    ${{ compareUsdt }}
+                    =
+                    $ {{  compareClp}}
+                  </h2>
+              </div>
+              <div class="fee-add">
+                <h4 >FEE</h4>
+                <h4 class="price">{{calculateTotalFee().toFixed(5) }}</h4>
+              </div>
+          </div>
+      </div>
+      <div class="pb-10 submit-modal">
+        <button type="button" class="btn" >
+          DE ACUERDO
+        </button>
+      </div>
+    </div>
+  </p-dialog>
+</div>

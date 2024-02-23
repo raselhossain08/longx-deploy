@@ -1,0 +1,181 @@
+<div class="p-5 overflow-hidden main">
+  <div class="flex">
+    <div class="w-2/4 p-3">
+      <div class="rounded-lg gallery-area md:p-2 lg:p-2 2xl:p-4">
+        <div class="main-image">
+          <img src={{currentGallery.pic}} alt="" class="">
+        </div>
+        <div class="gallery-image">
+          <div class="flex justify-between">
+            <button type="button" *ngFor="let item of gallery" (click)="updateGallery(item)">
+              <img src={{item.pic}} alt="">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-2/4 p-3">
+      <div class="rounded-lg gallery-details md:p-2 lg:p-2 2xl:p-4">
+        <div class="top-bar">
+          <h2 class="py-2">$280.000.000 <span>($100.000x token)</span></h2>
+          <p class="pb-2">Modern 5 -Bed Luxury Villa</p>
+          <div class="flex items-center location">
+            <img src="assets/icons/location.svg" alt="location">
+            <p class="mx-2">350 commercial LivingstonRd, blvd # 3564 Linden, New jersey</p>
+          </div>
+        </div>
+        <div class="w-full p-4 my-3 investment-area">
+          <div class="mb-3 title">
+            <h3>Inversion</h3>
+          </div>
+          <div class="flex items-center w-full px-4 mb-3 investment-item active">
+            <div class="flex items-center justify-between w-full">
+              <div class="price">
+                <p>$7.000.000</p>
+              </div>
+              <div class="flex items-center details">
+                <img src="assets/icons/watch.svg" alt="watch">
+                <p class="mx-2">36 Meses</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full px-4 mb-3 investment-item ">
+            <div class="flex items-center justify-between w-full">
+              <div class="price">
+                <p>QTY Token</p>
+              </div>
+              <div class="flex items-center details">
+                <p class="mx-2 ac">70</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full px-4 mb-3 investment-item ">
+            <div class="flex items-center justify-between w-full">
+              <div class="price">
+                <p>Ing Mensual</p>
+              </div>
+              <div class="flex items-center details">
+                <p class="mx-2 ac">$25.666 - $33.750</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full px-4 mb-3 investment-item ">
+            <div class="flex items-center justify-between w-full">
+              <div class="price">
+                <p>ROI 36 meses</p>
+              </div>
+              <div class="flex items-center details">
+                <p class="mx-2 ac">35% - 46%</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full px-4 mb-3 investment-item ">
+            <div class="flex items-center justify-between w-full">
+              <div class="price">
+                <p>ROI 12 meses</p>
+              </div>
+              <div class="flex items-center details">
+                <p class="mx-2 ac">11.6% - 15.3%</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full px-4 mb-3 investment-item last">
+            <div class="flex flex-col items-center justify-between w-full">
+              <div class="flex justify-center w-full py-4 text-center price">
+                <p>Rent abilidad esperada </p>
+                <img src="assets/icons/info.svg" alt="">
+              </div>
+              <div class="flex items-center pb-3 details">
+                <p class="mx-2 ac">2.450.000  -  3.220.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center submit-btn">
+            <button type="button" class="capitalize active"  (click)="Payment()">simular inversión</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-8 offer-area md:p-2 lg:p-2 2xl:p-4">
+      <div class="flex items-center justify-between w-full offer">
+        <div class="divider"></div>
+        <div class="w-4/12 px-4 offer-box">
+          <h3>Avail this Offer !</h3>
+          <p>Token will be end in 3 Days</p>
+        </div>
+          <div class="w-6/12 progressbar-area" >
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 progressbar">
+              <div class="bg-blue-600 h-2.5 rounded-full progressbar-line" style="width: 45%"></div>
+            </div>
+           <div class="flex justify-between w-full pt-1">
+            <p>60%</p>
+            <p>132 token left</p>
+           </div>
+        </div>
+        <div class="flex justify-end w-2/12 pl-5 invest-area submit-btn">
+          <button type="button" class="capitalize active">invertir</button>
+        </div>
+      </div>
+  </div>
+  <div class="py-6 main-exchange md:p-2 lg:p-2 2xl:p-4">
+    <div class=" exchange-bar">
+      <div class="flex items-center w-full top-btn-group">
+        <button type="button" class="btn"><span>Discription</span></button>
+        <button type="button" class="mx-1 btn2 active"><span>Finanzas</span> </button>
+        <button type="button" class="btn3"> <span class="ml-5">Documentos</span> </button>
+      </div>
+    </div>
+    <div class="p-5 rounded-lg details-area">
+      <div class="py-4 top-bar">
+          <h2>Details</h2>
+          <div class="flex items-center justify-between py-4">
+            <div class="flex items-center justify-between topBar-details">
+              <div class="flex items-center">
+                <p class="mr-2 round-shape"></p>
+                <p>Total Inversion</p>
+              </div>
+              <p class="mx-10 ac">280M</p>
+            </div>
+            <div class="flex items-center justify-between mx-4 topBar-details">
+              <div class="flex items-center">
+                <p class="mr-2 round-shape"></p>
+                <p>Precio Token</p>
+              </div>
+              <p class="mx-10 ac ">$100.000 CLP</p>
+            </div>
+            <div class="flex items-center justify-between mx-4 topBar-details">
+              <div class="flex items-center">
+                <p class="mr-2 round-shape"></p>
+                <p>Total Token</p>
+              </div>
+              <p class="mx-10 ac ">2800</p>
+            </div>
+            <div class="flex items-center justify-between mx-4 topBar-details">
+              <div class="flex items-center">
+                <p class="mr-2 round-shape"></p>
+                <p>Última tasación</p>
+              </div>
+              <p class="mx-10 ac ">300M</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="p-4 overview">
+      <div class="flex">
+        <div class="w-2/4">
+          <div class="px-5 overview-text">
+            <h2 class="py-3">Overview</h2>
+            <p>Lorem ispum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem ispum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text .Lorem ispum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+          </div>
+        </div>
+        <div class="w-2/4">
+          <div class="py-4 map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117241.63554449871!2d-77.09026583103991!3d39.44950700271731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64debe9f190df%3A0xf2af37657655f6b1!2sMaryland%2C%20USA!5e0!3m2!1sen!2sbd!4v1699989016028!5m2!1sen!2sbd" width="600" height="322px" style="border:0; filter: grayscale(1);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

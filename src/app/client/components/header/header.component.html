@@ -1,0 +1,105 @@
+<div class="w-full header-content">
+  <div class="flex items-center justify-between w-full px-10">
+      <div class="w-2/6 mx-2 user-name">
+        <h2>
+          Bienvenido,  <span> {{ profile?.name  }} </span>
+        </h2>
+      </div>
+      <div class="w-2/6 mx-2 search-content">
+        <div class="w-full search-bar">
+            <div class="relative w-full form-group">
+              <input type="text"
+                class="px-6 form-control" name="search" id="search"  placeholder="Search...">
+              <button type="button" class="absolute right-0 h-full px-5 text-white button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+        </div>
+      </div>
+      <div class="relative w-2/6 mx-2 profile-details">
+        <div class="flex items-center justify-end profile-details">
+            <div class="mx-5 notification">
+              <button type="button" (click)="notificationBar=!notificationBar">
+                <img src="/assets/icons/notification.svg" alt="notification">
+                <span class="notification-badge"></span>
+              </button>
+            </div>
+            <div class="profile ">
+              <button type="button" class="flex items-center p-4 cursor-pointer" (click)="profileButton()">
+                <img src="/assets/avatar/avatar.png" alt="avatar">
+                <div class="mx-3 info">
+                  <h2>{{profile?.name}} </h2>
+                  <p>{{profile?.email}} </p>
+                </div>
+                <button class="mx-2 text-white" type="button">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+              </button>
+            </div>
+        </div>
+        <div class="notification-area" *ngIf="notificationBar" [ngClass]="notificationBar? 'active':''">
+            <div class="">
+                <div class="flex items-center justify-between p-5 top-bar">
+                    <div><h2>Notificaciones</h2></div>
+                    <div>
+                      <button type="button" (click)="notificationBar=false">
+                      <i class="fa-solid fa-xmark"></i>
+                    </button></div>
+                </div>
+                <div class="p-5 content">
+                    <div class="flex items-center justify-between item">
+                        <div >
+                          <h4>Lorem Ipsum</h4>
+                          <p class="pt-2">Lorem Ipsum</p>
+                        </div>
+                        <div>
+                          <div class="status-btn buy">
+                            <button type="button" class="buy">+16.78 %</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 content">
+                  <div class="flex items-center justify-between item">
+                      <div >
+                        <h4>Lorem Ipsum</h4>
+                        <p class="pt-2">Lorem Ipsum</p>
+                      </div>
+                      <div>
+                        <div class="status-btn ">
+                          <button type="button" class="sell">+16.78 %</button>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="p-5 content">
+                <div class="flex items-center justify-between item">
+                    <div >
+                      <h4>Lorem Ipsum</h4>
+                      <p class="pt-2">Lorem Ipsum</p>
+                    </div>
+                    <div>
+                      <div class="status-btn ">
+                        <button type="button" class="buy">+16.78 %</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+              <div class="p-5 content">
+                <div class="flex items-center justify-between item">
+                    <div >
+                      <h4>Lorem Ipsum</h4>
+                      <p class="pt-2">Lorem Ipsum</p>
+                    </div>
+                    <div>
+                      <div class="status-btn ">
+                        <button type="button" class="sell">+16.78 %</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>

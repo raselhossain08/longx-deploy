@@ -1,0 +1,6 @@
+          <div class="absolute left-0 right-0 w-full p-4 rounded-lg dropdown-menu SelectBank-drop"
+            [ngClass]="isOpen? 'active':''" aria-labelledby="triggerId">
+            <div *ngFor="let item of BankList">
+              <button class="dropdown-item" type="button" (click)="BankNameChange($event)">{{item.name}}</button>
+            </div>
+          </div>

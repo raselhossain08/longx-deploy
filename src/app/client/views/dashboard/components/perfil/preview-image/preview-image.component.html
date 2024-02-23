@@ -1,0 +1,24 @@
+<div class="verification-area">
+  <div class="modal">
+    <div class="p-5 top-bar">
+      <div class="flex">
+        <div class="w-3/4">
+          <a href="">Preview Image</a>
+        </div>
+        <div class="flex justify-end w-1/4">
+          <button type="button" class="btn" ><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-center pt-5 modal-content">
+        <div class="p-2 border-2 rounded-lg h-60 w-60 preview">
+          <img [src]="imageUrl" alt="" class="object-contain w-full h-full" >
+        </div>
+    </div>
+    <div class="pb-4 submit-modal">
+      <button type="button" class="btn" >
+        Verify
+      </button>
+    </div>
+  </div>
+</div>

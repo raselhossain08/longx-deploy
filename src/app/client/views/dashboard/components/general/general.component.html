@@ -1,0 +1,648 @@
+<!-- top Bar -->
+<div class="p-5 main">
+  <div class="top-bar">
+    <div class="flex">
+      <div class="w-1/4 md:p-2 lg:p-2 2xl:p-4">
+        <div class="estimated-balance top-item">
+          <div class="flex items-center justify-start top-content">
+            <button type="button" class="top-content-btn">
+              <img src="assets/icons/wallet.svg" alt="">
+            </button>
+            <div class="px-4">
+              <h3>Balance Estimado</h3>
+            </div>
+          </div>
+          <div class="lg:pb-2 lg:pt-4 balance-price 2xl:pb-5 2xl:pt-8 md:pb-2 md:pt-4">
+            <div class="flex items-center justify-between">
+              <div class="price-details">
+                <h2 >{{MainBalance}}</h2>
+                <p>{{GetBalance / clpPrice |number: '1.7-7'}} USDT</p>
+              </div>
+              <div class="price-parcent">
+                <p>+16.78 %</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between balance-button-group">
+            <button type="button" class="mr-2 lg:w-2/4 remove-btn" (click)=" withdraw()">
+              retirar
+            </button>
+            <button type="button" class="ml-2 lg:w-2/4 deposit-btn" (click)="deposit()">
+              Depositar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/4 md:p-2 lg:p-2 2xl:p-4">
+        <div class="cursor-pointer top-item chilean-pesos" (click)="clipRoute()">
+            <button type="button" >
+              <div class="flex items-center justify-start cursor-pointer top-content">
+                <button type="button" class="top-content-btn" >
+                  <img src="assets/flag/chile.svg" alt="chile">
+                </button>
+                <div class="px-4">
+                  <h3>Pesos Chilenos</h3>
+                  <p>CLP</p>
+                </div>
+              </div>
+            </button>
+          <div class="lg:pb-2 lg:pt-4 balance-price 2xl:pb-5 2xl:pt-8 md:pb-2 md:pt-4 ">
+            <div class="flex items-center justify-between">
+              <div class="price-details">
+                <h2>$ {{clpPrice}}</h2>
+                <p>{{usdtPrice}} USDT</p>
+              </div>
+              <div class="bg-transparent ">
+                <img src="assets/graph/graph1.svg" alt="chile">
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 pb-5 chilean-bottom ">
+            <div class="flex items-center justify-between">
+              <div class="chilean-bottom-details1">
+                <p>PnL Daily</p>
+              </div>
+              <div class="chilean-bottom-details2">
+                <p>+$16.78</p>
+              </div>
+              <div class="chilean-bottom-details3">
+                <p>+16.78 %</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/4 md:p-2 lg:p-2 2xl:p-4">
+        <div class="cursor-pointer top-item chilean-pesos" (click)="usdtRoute()">
+          <div class="flex items-center justify-start top-content">
+            <button type="button" class="top-content-btn" (click)="ChangeUsdt()">
+              <img src="assets/logos/usdt.svg" alt="chile">
+            </button>
+            <div class="px-4">
+              <h3>Tether</h3>
+              <p>USDT</p>
+            </div>
+          </div>
+          <div class="lg:pb-2 lg:pt-4 balance-price 2xl:pb-5 2xl:pt-8 md:pb-2 md:pt-4 ">
+            <div class="flex items-center justify-between">
+              <div class="price-details">
+                <h2>{{usdtPrice}} Usdt</h2>
+                <p>$ {{clpPrice}}</p>
+              </div>
+              <div class="bg-transparent ">
+                <img src="assets/graph/graph2.svg" alt="chile">
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 pb-5 chilean-bottom ">
+            <div class="flex items-center justify-between">
+              <div class="chilean-bottom-details1">
+                <p>PnL Daily</p>
+              </div>
+              <div class="chilean-bottom-details2">
+                <p>+$16.78</p>
+              </div>
+              <div class="chilean-bottom-details3">
+                <p>+16.78 %</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="w-1/4 md:p-2 lg:p-2 2xl:p-4">
+        <div class="cursor-pointer top-item chilean-pesos " (click)="rwaRoute()">
+          <div class="flex items-center justify-start top-content">
+            <button type="button" class="top-content-btn">
+              <img src="assets/logos/rwa.svg" alt="chile">
+            </button>
+            <div class="px-4">
+              <h3>Mis Activos RWA</h3>
+              <p>RWA</p>
+            </div>
+          </div>
+          <div class="lg:pb-2 lg:pt-4 balance-price 2xl:pb-5 2xl:pt-8 md:pb-2 md:pt-4 ">
+            <div class="flex items-center justify-between">
+              <div class="price-details">
+                <h2>$16.000.000 </h2>
+                <p>17.021 USDT</p>
+              </div>
+              <div class="bg-transparent ">
+                <img src="assets/graph/graph3.svg" alt="chile">
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 pb-5 chilean-bottom ">
+            <div class="flex items-center justify-between">
+              <div class="chilean-bottom-details2">
+                <p>Ver mis Activos</p>
+              </div>
+              <div class="chilean-bottom-details2">
+                <p><i class="fa-solid fa-eye"></i></p>
+              </div>
+              <div class="chilean-bottom-details3">
+                <p>+16.78 %</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- Statistics -->
+  <div class="w-full statistics-area">
+    <div class="flex">
+      <div class="lg:w-7/12 2xl:w-8/12 w-3/4 md:p-2 lg:p-2 2xl:p-4 statistics-left ">
+        <div class=" statistics-content">
+          <!-- top-bar -->
+          <div class="flex items-center justify-between p-5 top-bar">
+            <div>
+              <h3 class="title">Estadisticas</h3>
+            </div>
+            <div class="flex items-center chart-btn ">
+              <div class="candle-group">
+                <button>
+                  <img src="assets/icons/candle.svg" alt="">
+                </button>
+              </div>
+              <div class="relative inline-block text-left">
+                <div class="relative ">
+                  <button type="button" class="flex items-center capitalize currencyBtn" id="menu-button" (click)="currencyDrop=!currencyDrop">
+                    <img src={{currentDrop.pic}} alt="">
+                    <span>{{currentDrop.name}}</span>
+                    <svg class="w-5 h-5 -mr-1 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                  <div class="absolute flex-col drop-down" *ngIf="currencyDrop">
+                    <button type="button" class="flex items-center" (click)="isClipDrop()">
+                      <img src="assets/logos/chile.svg" alt="">
+                      <p>Clip</p>
+                    </button>
+                    <button type="button" class="flex items-center" (click)="isUsdtDrop()">
+                      <img src="assets/logos/usdt.svg" alt="">
+                      <p>USDT</p>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="absolute right-0 z-10 hidden w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                  <div class="py-1" role="none">
+
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                      id="menu-item-0">Edit</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                      id="menu-item-1">Duplicate</a>
+                  </div>
+                  <div class="py-1" role="none">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                      id="menu-item-2">Archive</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                      id="menu-item-3">Move</a>
+                  </div>
+                  <div class="py-1" role="none">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                      id="menu-item-4">Share</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                      id="menu-item-5">Add to favorites</a>
+                  </div>
+                  <div class="py-1" role="none">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                      id="menu-item-6">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- currency-bar -->
+          <div class="p-5 currency-bar">
+            <div class="flex justify-start-between items-t">
+              <div class="w-2/4 currency-drop">
+                <button type="button" class="flex items-center justify-between currency-drop-btn">
+                  Tether/USDT <i class="pl-3 fa-solid fa-angle-down"></i>
+                </button>
+                <h3>$35,352.02</h3>
+              </div>
+              <div class="flex items-start justify-end w-2/4 currency-btn-group">
+                <button type="button" class="btn active"> 1H </button>
+                <button type="button" class="btn"> 3H </button>
+                <button type="button" class="btn"> 1D </button>
+                <button type="button" class="btn"> 1W </button>
+                <button type="button" class="btn"> 1M </button>
+              </div>
+            </div>
+          </div>
+          <!-- chart Bar -->
+          <div class="p-5 chart-bar" >
+            <div class="chart-area" *ngIf="clip">
+              <div class="chart-file">
+                <div id="chart">
+                  <apx-chart
+                    [series]="chartOptions.series!"
+                    [chart]="chartOptions.chart!"
+                    [xaxis]="chartOptions.xaxis!"
+                    [stroke]="chartOptions.stroke!"
+                    [tooltip]="chartOptions.tooltip!"
+                    [dataLabels]="chartOptions.dataLabels!"
+                    [markers]="chartOptions.markers!"
+                  ></apx-chart>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 chart-area2" *ngIf="usdtDrop">
+              <div class="chart-file2">
+                <div id="chart">
+                  <apx-chart
+                    [series]="chartOptions2.series!"
+                    [chart]="chartOptions2.chart!"
+                    [xaxis]="chartOptions2.xaxis!"
+                    [stroke]="chartOptions2.stroke!"
+                    [tooltip]="chartOptions2.tooltip!"
+                    [dataLabels]="chartOptions2.dataLabels!"
+                    [fill]="chartOptions2.fill!"
+                    [markers]="chartOptions2.markers!"
+                  ></apx-chart>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-5/12 2xl:w-4/12 md:p-2 lg:p-2 2xl:p-4 statistics-right">
+        <!-- exchange -->
+        <div class=" exchange-bar">
+          <div class="flex items-center w-full top-btn-group">
+            <button type="button" class="btn" (click)="BuySell()"><span>Comprar</span></button>
+            <button type="button" class="mx-1 btn2" (click)="BuySell()"><span class="ml-2">Vender</span> </button>
+            <button type="button" class="btn3"> <span class="ml-5">Exchange</span> </button>
+          </div>
+          <div class="flex flex-col items-start justify-between p-5 compare-market">
+            <div class="flex flex-col w-full h-full form-group">
+              <label for="total">Total</label>
+              <div class="relative w-full">
+                <input type="text" name="total" id="Total" class="w-full form-control" [placeholder]="usdtPrice " [(ngModel)]="compareUsdt" (change)="compareUsdtPrice ($event)">
+                <p class="absolute top-0 h-full left-2 dollar-sign"> $</p>
+                <button type="button" class="absolute top-0 right-0 h-full ">
+                  <img src="assets/logos/usdt.svg" alt="usdt" class="mx-2">
+                  USDT
+                </button>
+              </div>
+            </div>
+            <div class="flex items-center justify-start w-full h-full py-4">
+              <div class=" divider"></div>
+              <div class="flex justify-center w-1/4 mx-2 swap"><img src="assets/icons/Swap.svg" alt="Swap"></div>
+              <div class="divider"></div>
+            </div>
+            <div class="flex flex-col w-full h-full mb-4 form-group">
+              <label for="total">Total</label>
+              <div class="relative w-full">
+                <input type="text" name="total" id="Total" class="w-full form-control" [placeholder]="clpPrice " [(ngModel)]="compareClp" (change)="compareClpPrice ($event)">
+                <p class="absolute top-0 h-full left-2 dollar-sign"> $</p>
+                <button type="button" class="absolute top-0 right-0 h-full " >
+                  <img src="assets/flag/chile.svg" alt="usdt" class="mx-2">
+                  CLP
+                </button>
+              </div>
+            </div>
+            <!-- Percentage -->
+            <div class="w-full h-full py-4 percentage">
+              <h5 class="py-3">Porcentaje</h5>
+              <div class="w-full percentage-line ">
+                <div class="flex items-center justify-start w-full">
+                  <p class="round-shape"></p>
+                  <div class="divider"></div>
+                  <p class="round-shape"></p>
+                  <div class="divider"></div>
+                  <p class="round-shape active"></p>
+                  <div class="divider"></div>
+                  <p class="round-shape"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Exchange btn -->
+            <div class="h-full py-4 exchange-btn">
+              <button type="button" class="btn" (click)="showDialog()">Exchange</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- General Portfolio -->
+  <div class="general-portfolio">
+    <div class="flex">
+      <div class="w-8/12 p-4">
+        <div class="p-4 general-left">
+          <div class="flex items-center justify-between w-full">
+            <div>
+              <h2>Portafolio General</h2>
+            </div>
+            <div>
+              <div class="flex items-center justify-between view">
+                <button type="button" class="btn">View More</button>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 portfolio-table">
+            <!-- t-head -->
+            <div class="flex items-center py-4 t-head">
+              <div class="w-3/12">
+              </div>
+              <div class="w-2/12 text-center">
+                <p>Total</p>
+              </div>
+              <div class="w-2/12">
+                <p>Change</p>
+              </div>
+              <div class="w-2/12">
+                <p>Estado</p>
+              </div>
+              <div class="w-2/12">
+                <p>Estado</p>
+              </div>
+              <div class="w-1/12"></div>
+            </div>
+            <div class="flex items-center mb-3 table-bodys">
+              <div class="w-3/12">
+                <div class="flag-box">
+                  <div class="flex items-center justify-start top-content">
+                    <button type="button" class="btn">
+                      <img src="assets/flag/chile.svg" alt="chile">
+                    </button>
+                    <div class="px-4">
+                      <h3>Total CLP</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-2/12">
+                <div class="total">
+                  <p>$3.560M</p>
+                </div>
+              </div>
+              <div class="w-2/12 ">
+                <div class="mx-auto Change">
+                  <p>+16.78 %</p>
+                </div>
+              </div>
+              <div class="w-2/12 text-center">
+                <div class="Estado1">
+                  <p>Depositar</p>
+                </div>
+              </div>
+              <div class="w-2/12 text-center">
+                <div class="Estado2">
+                  <p>Retirar</p>
+                </div>
+              </div>
+              <div class="w-1/12">
+                <div class="action-btn">
+                  <button type="button"><i class="fa-solid fa-ellipsis"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center mb-3 table-bodys">
+              <div class="w-3/12">
+                <div class="flag-box">
+                  <div class="flex items-center justify-start top-content">
+                    <button type="button" class="btn">
+                      <img src="assets/logos/usdt.svg" alt="usdt">
+                    </button>
+                    <div class="px-4">
+                      <h3>TTotal USDT</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-2/12">
+                <div class="total">
+                  <p>$3.560M</p>
+                </div>
+              </div>
+              <div class="w-2/12 ">
+                <div class="mx-auto Change active">
+                  <p>+16.78 %</p>
+                </div>
+              </div>
+              <div class="w-2/12 text-center">
+                <div class="Estado1 ">
+                  <p>Depositar</p>
+                </div>
+              </div>
+              <div class="w-2/12 text-center">
+                <div class="Estado2">
+                  <p>Retirar</p>
+                </div>
+              </div>
+              <div class="w-1/12">
+                <div class="action-btn">
+                  <button type="button"><i class="fa-solid fa-ellipsis"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center table-bodys">
+              <div class="w-3/12">
+                <div class="flag-box">
+                  <div class="flex items-center justify-start top-content">
+                    <button type="button" class="btn">
+                      <img src="assets/flag/chile.svg" alt="chile">
+                    </button>
+                    <div class="px-4">
+                      <h3>Total CLP</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-2/12">
+                <div class="total">
+                  <p>$3.560M</p>
+                </div>
+              </div>
+              <div class="w-2/12 ">
+                <div class="mx-auto Change">
+                  <p>+16.78 %</p>
+                </div>
+              </div>
+              <div class="w-2/12 text-center">
+                <div class="Estado1">
+                  <p>Depositar</p>
+                </div>
+              </div>
+              <div class="w-2/12 text-center">
+                <div class="Estado2">
+                  <p>Retirar</p>
+                </div>
+              </div>
+              <div class="w-1/12">
+                <div class="action-btn">
+                  <button type="button"><i class="fa-solid fa-ellipsis"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-4/12 p-4">
+        <div class="flex flex-col justify-between p-4 general-right">
+          <div class="flex items-center justify-between w-full">
+            <div>
+              <h2>Transacciónes</h2>
+            </div>
+            <div>
+              <div class="flex items-center justify-between view">
+                <button type="button" class="btn">View More</button>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 transactions-table">
+            <!-- t-head -->
+            <div class="flex items-center mb-5 table-bodys">
+              <div class="w-4/12">
+                <div class="deposit">
+                  <div class="flex items-center ">
+                    <div class="deposit-btn">
+                      <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+                    <p>Deposit</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-2/12">
+                <div class="total">
+                  <p>+16.78</p>
+                </div>
+              </div>
+              <div class="w-3/12 text-center">
+                <div class="time">
+                  <p>Depositar</p>
+                </div>
+              </div>
+              <div class="w-3/12 text-center">
+                <div class="canceled status">
+                  <p>Canceled</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center mb-5 table-bodys">
+              <div class="w-4/12">
+                <div class="withdraw">
+                  <div class="flex items-center ">
+                    <div class="withdraw-btn">
+                      <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+                    <p>Withdraw</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-2/12">
+                <div class="total">
+                  <p>+24.2 </p>
+                </div>
+              </div>
+              <div class="w-3/12 text-center">
+                <div class="time">
+                  <p>06:01 AM</p>
+                </div>
+              </div>
+              <div class="w-3/12 text-center">
+                <div class="pending status">
+                  <p>Pending</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center mb-5 table-bodys">
+              <div class="w-4/12">
+                <div class="withdraw">
+                  <div class="flex items-center ">
+                    <div class="withdraw-btn">
+                      <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+                    <p>Withdraw</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-2/12">
+                <div class="total">
+                  <p>+24.2 </p>
+                </div>
+              </div>
+              <div class="w-3/12 text-center">
+                <div class="time">
+                  <p>06:01 AM</p>
+                </div>
+              </div>
+              <div class="w-3/12 text-center">
+                <div class="pending status">
+                  <p>Canceled</p>
+                </div>
+              </div>
+            </div>
+             <div class="flex items-center table-bodys ">
+              <div class="w-4/12">
+                <div class="deposit">
+                  <div class="flex items-center ">
+                    <div class="deposit-btn">
+                      <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+                    <p>Sent USDT</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-2/12">
+                <div class="total">
+                  <p>-74.12</p>
+                </div>
+              </div>
+              <div class="w-3/12 text-center">
+                <div class="time">
+                  <p>05:34 PM</p>
+                </div>
+              </div>
+              <div class="w-3/12 text-center">
+                <div class="done status">
+                  <p>Done</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-area">
+  <p-dialog header="Exchange" [(visible)]="visible" [modal]="true" [style]="{ width: '30vw' }" [draggable]="false" [resizable]="false">
+    <div class="modal ">
+      <div class="p-5 modal-content">
+          <div class="py-10 form">
+              <h4 class="py-5 title">Operacion en progreso</h4>
+              <div class="mb-4 convert">
+                  <h2>USDT/CLP </h2>
+              </div>
+              <div class="mb-4 convert-value">
+                  <h2>
+                    ${{ compareUsdt }}
+                    =
+                    $ {{  compareClp}}
+                  </h2>
+              </div>
+              <div class="fee-add">
+                <h4 >FEE</h4>
+                <h4 class="price">{{calculateTotalFee().toFixed(5) }}</h4>
+              </div>
+          </div>
+      </div>
+      <div class="pb-10 submit-modal">
+        <button type="button" class="btn" >
+          DE ACUERDO
+        </button>
+      </div>
+    </div>
+  </p-dialog>
+</div>

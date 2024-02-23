@@ -1,0 +1,326 @@
+<div class="p-5 wallet-area">
+  <div class="flex">
+    <div class="w-7/12 md:p-2 lg:p-2 2xl:p-4">
+      <div class="flex py-8 wallet-top-bar">
+        <div class="w-2/4 h-full border-r">
+          <div class="relative h-full chilean-pesos">
+            <div class="flex h-full p-5 top-item">
+              <div class="w-3/4">
+                <div class="flex items-center justify-start cursor-pointer top-content">
+                  <button type="button" class="top-content-btn">
+                    <img src="assets/flag/chile.svg" alt="chile" />
+                  </button>
+                  <div class="px-4">
+                    <h3>Pesos Chilenos</h3>
+                    <p>CLP</p>
+                  </div>
+                </div>
+                <div class="balance">
+                  <p class="pt-4 pb-2">Total Balance</p>
+                  <h2>{{MainBalance}}</h2>
+                  <h4>{{GetBalance / clpPrice |number: '1.7-7'}}  USDT</h4>
+                </div>
+                <div class="flex items-center justify-between pt-8 balance-button-group">
+                  <button type="button" class="mr-2 capitalize lg:w-2/4 remove-btn" (click)="withdraw()">
+                    retirar
+                  </button>
+                  <button type="button" class="ml-2 capitalize lg:w-2/4 deposit-btn" (click)="deposit()">
+                    Depositar
+                  </button>
+                </div>
+              </div>
+              <!-- search bar -->
+              <div class="flex justify-end w-1/4">
+                <button type="button" class="flex items-center justify-between drop-button"
+                  (click)="IsSearch = !IsSearch">
+                  <img src="assets/flag/chile.svg" alt="clip" class="mr-2" />
+                  <p class="mr-2">CLP</p>
+                  <div>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <!-- drop-down -->
+            <div class="absolute w-full search-drop" [ngClass]="IsSearch ? 'active' : ''" *ngIf="IsSearch">
+              <div class="p-5 bg-transparent">
+                <div class="relative w-full form-group">
+                  <input type="text" class="w-full form-control" name="" id="" aria-describedby="helpId"
+                    placeholder="Search Currency" />
+                  <button type="button" class="absolute top-0 right-0 h-full">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="flex items-center justify-between p-4 currency-item">
+                <div class="flex items-center justify-start cursor-pointer top-content">
+                  <button type="button" class="top-content-btn">
+                    <img src="assets/flag/chile.svg" alt="chile" />
+                  </button>
+                  <div class="px-4">
+                    <h3>Pesos Chilenos</h3>
+                    <p>CLP</p>
+                  </div>
+                </div>
+                <div class="text-white"></div>
+              </div>
+              <div class="flex items-center justify-between p-4 currency-item">
+                <div class="flex items-center justify-start cursor-pointer top-content" (click)="usdWallet()">
+                  <button type="button" class="top-content-btn">
+                    <img src="assets/logos/usdt.svg" alt="chile" />
+                  </button>
+                  <div class="px-4">
+                    <h3>Tether</h3>
+                    <p>USDT</p>
+                  </div>
+                </div>
+                <div class="text-white">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+              <div class="flex items-center justify-between p-4 currency-item">
+                <div class="flex items-center justify-start cursor-pointer top-content">
+                  <button type="button" class="top-content-btn">
+                    <img src="assets/logos/Injective.svg" alt="chile" />
+                  </button>
+                  <div class="px-4">
+                    <h3>Injective</h3>
+                    <p>INJ</p>
+                  </div>
+                </div>
+                <div class="text-white"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-2/4">
+          <div class="p-5 right-content">
+            <div class="content-box">
+              <div class="flex">
+                <div class="w-2/4">
+                  <p class="withdraw-txt">Withdraw</p>
+                  <h3 class="py-1 price">$5.000.000</h3>
+                  <h3 class="py-1 total-price">4,897.94 USDT</h3>
+                </div>
+                <div class="flex flex-col items-center content-between justify-center w-2/4 h-full">
+                  <div class="h-50">
+                    <img src="assets/graph/graph1.svg" alt="graph1">
+                  </div>
+                  <div class="py-2 h-50">
+                    <button class="price-btn" type="button">+16.78 %</button>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full h-4 mt-2 bg-black rounded-full dark:bg-gray-700 progressbar">
+                <div class="h-4 bg-red-400 rounded-full dark:bg-blue-500 progressbar-line" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="pt-3 content-box">
+              <div class="flex">
+                <div class="w-2/4">
+                  <p class="withdraw-txt">Deposit</p>
+                  <h3 class="py-1 price">$7.000.000</h3>
+                  <h3 class="py-1 total-price">4,897.94 USDT</h3>
+                </div>
+                <div class="flex flex-col items-center content-between justify-center w-2/4 h-full">
+                  <div class="h-50">
+                    <img src="assets/graph/graph1.svg" alt="graph1">
+                  </div>
+                  <div class="py-2 h-50">
+                    <button class="price-btn" type="button">+16.78 %</button>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full h-4 mt-2 bg-black rounded-full dark:bg-gray-700 progressbar">
+                <div class="h-4 bg-red-400 rounded-full dark:bg-blue-500 progressbar-line" style="width: 45%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-5/12 md:p-2 lg:p-2 2xl:p-4">
+      <div class="portfolio">
+        <div class="p-5">
+          <div class="flex items-center justify-between py-4 top-bar">
+            <div>
+              <h2>Portafolio</h2>
+            </div>
+            <div>
+              <button type="button">View All</button>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center justify-start">
+            <div class="w-2/4 my-2" *ngFor="let items of portfolioList">
+              <a class="flex items-center portfolio-btn decoration-none" [routerLink]="items.url">
+                <button type="button">
+                  <img src={{items.img}} alt="usdt">
+                </button>
+                <div class="p-2">
+                  <h2>{{items.name}}</h2>
+                  <p class="pt-2">{{items.price}}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex">
+    <div class="w-8/12 mt-2 md:p-2 lg:p-2 2xl:p-4">
+      <!-- currency-bar -->
+      <div class="p-5 currency-bar">
+        <div class="flex items-center justify-start-between">
+          <div class="w-2/4 currency-drop">
+            <h3>Wallet Growth Statistics</h3>
+          </div>
+          <div class="flex items-start justify-end w-2/4 currency-btn-group">
+            <button type="button" class="btn active"> 1H </button>
+            <button type="button" class="btn"> 3H </button>
+            <button type="button" class="btn"> 1D </button>
+            <button type="button" class="btn"> 1W </button>
+            <button type="button" class="btn"> 1M </button>
+          </div>
+        </div>
+      </div>
+      <div class="wallet-chart">
+        <div class="chart-area" >
+          <div class="chart-file">
+            <div id="chart">
+              <apx-chart
+                [series]="chartOptions2.series!"
+                [chart]="chartOptions2.chart!"
+                [xaxis]="chartOptions2.xaxis!"
+                [stroke]="chartOptions2.stroke!"
+                [tooltip]="chartOptions2.tooltip!"
+                [dataLabels]="chartOptions2.dataLabels!"
+                [markers]="chartOptions2.markers!"
+              ></apx-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-4/12">
+      <div class="chart-area">
+        <div class="flex items-end justify-start p-4 pt-6 mt-3 chart-file chart-pie">
+          <div class="w-7/12 h-full">
+            <div class="relative chartBox">
+              <apx-chart ngClass="chart-box z-10 relative" [series]="chartOptions.series!" [chart]="chartOptions.chart!"
+                [labels]="chartOptions.labels!" [responsive]="chartOptions.responsive!" [fill]="chartOptions.fill!"
+                [stroke]="chartOptions.stroke!" [tooltip]="chartOptions.tooltip!"
+                [legend]="chartOptions.legend!"></apx-chart>
+              <div class="absolute top-0 text-white shape">
+                <div class="border_shape">
+                  <p>Statistics</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-5/12 h-full">
+            <div class="flex chart-btn">
+              <div class="flex items-center buy">
+                <div class="mx-2 buyBg"></div>
+                <p>Retiros</p>
+              </div>
+              <div class="flex items-center px-2 Sell">
+                <div class="mx-2 SellBg"></div>
+                <p>Depositos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-5 statistics-right">
+        <!-- exchange -->
+       <!-- exchange -->
+       <div class=" exchange-bar">
+        <div class="flex items-center w-full top-btn-group">
+          <button type="button" class="btn" (click)="BuySell()"><span>Comprar</span></button>
+          <button type="button" class="mx-1 btn2" (click)="BuySell()"><span class="ml-2">Vender</span> </button>
+          <button type="button" class="btn3"> <span class="ml-5">Exchange</span> </button>
+        </div>
+        <div class="flex flex-col items-start justify-between p-5 compare-market">
+          <div class="flex flex-col w-full h-full form-group">
+            <label for="total">Total</label>
+            <div class="relative w-full">
+              <input type="text" name="total" id="Total" class="w-full form-control" [placeholder]="usdtPrice " [(ngModel)]="compareUsdt" (change)="compareUsdtPrice ($event)">
+              <p class="absolute top-0 h-full left-2 dollar-sign"> $</p>
+              <button type="button" class="absolute top-0 right-0 h-full ">
+                <img src="assets/logos/usdt.svg" alt="usdt" class="mx-2">
+                USDT
+              </button>
+            </div>
+          </div>
+          <div class="flex items-center justify-start w-full h-full py-4">
+            <div class=" divider"></div>
+            <div class="flex justify-center w-1/4 mx-2 swap"><img src="assets/icons/Swap.svg" alt="Swap"></div>
+            <div class="divider"></div>
+          </div>
+          <div class="flex flex-col w-full h-full mb-4 form-group">
+            <label for="total">Total</label>
+            <div class="relative w-full">
+              <input type="text" name="total" id="Total" class="w-full form-control" [placeholder]="clpPrice " [(ngModel)]="compareClp" (change)="compareClpPrice ($event)">
+              <p class="absolute top-0 h-full left-2 dollar-sign"> $</p>
+              <button type="button" class="absolute top-0 right-0 h-full " >
+                <img src="assets/flag/chile.svg" alt="usdt" class="mx-2">
+                CLP
+              </button>
+            </div>
+          </div>
+          <!-- Percentage -->
+          <div class="w-full h-full py-4 percentage">
+            <h5 class="py-3">Porcentaje</h5>
+            <div class="w-full percentage-line ">
+              <div class="flex items-center justify-start w-full">
+                <p class="round-shape"></p>
+                <div class="divider"></div>
+                <p class="round-shape"></p>
+                <div class="divider"></div>
+                <p class="round-shape active"></p>
+                <div class="divider"></div>
+                <p class="round-shape"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Exchange btn -->
+          <div class="h-full py-4 exchange-btn">
+            <button type="button" class="btn" (click)="visible=!visible">Exchange</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-area">
+  <p-dialog header="Exchange" [(visible)]="visible" [modal]="true" [style]="{ width: '30vw' }" [draggable]="false" [resizable]="false">
+    <div class="modal ">
+      <div class="p-5 modal-content">
+          <div class="py-10 form">
+              <h4 class="py-5 title">Operacion en progreso</h4>
+              <div class="mb-4 convert">
+                  <h2>USDT/CLP </h2>
+              </div>
+              <div class="mb-4 convert-value">
+                  <h2>
+                    ${{ compareUsdt }}
+                    =
+                    $ {{  compareClp}}
+                  </h2>
+              </div>
+              <div class="fee-add">
+                <h4 >FEE</h4>
+                <h4 class="price">{{calculateTotalFee().toFixed(5) }}</h4>
+              </div>
+          </div>
+      </div>
+      <div class="pb-10 submit-modal">
+        <button type="button" class="btn" >
+          DE ACUERDO
+        </button>
+      </div>
+    </div>
+  </p-dialog>
+</div>

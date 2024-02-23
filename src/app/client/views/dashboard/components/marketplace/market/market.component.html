@@ -1,0 +1,450 @@
+<div class="p-5 overflow-hidden main">
+  <div class="top-bar">
+    <div class="flex">
+      <div class="w-1/4 md:p-2 lg:p-2 2xl:p-4">
+        <div class="estimated-balance top-item">
+          <div class="flex items-center justify-start top-content">
+            <button type="button" class="top-content-btn">
+              <img src="assets/icons/wallet.svg" alt="">
+            </button>
+            <div class="px-4">
+              <h3>Balance Estimado</h3>
+            </div>
+          </div>
+          <div class="lg:pb-2 lg:pt-4 balance-price 2xl:pb-5 2xl:pt-8 md:pb-2 md:pt-4">
+            <div class="flex items-center justify-between">
+              <div class="price-details">
+                <h2 >{{MainBalance}}</h2>
+                <p>{{GetBalance / clpPrice |number: '1.7-7'}} USDT</p>
+              </div>
+              <div class="price-parcent">
+                <p>+16.78 %</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between balance-button-group">
+            <button type="button" class="mr-2 lg:w-2/4 remove-btn" (click)=" withdraw()">
+              retirar
+            </button>
+            <button type="button" class="ml-2 lg:w-2/4 deposit-btn" (click)="deposit()">
+              Depositar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/4 md:p-2 lg:p-2 2xl:p-4">
+        <div class="cursor-pointer top-item chilean-pesos" (click)="clipRoute()">
+            <button type="button" >
+              <div class="flex items-center justify-start cursor-pointer top-content">
+                <button type="button" class="top-content-btn" >
+                  <img src="assets/flag/chile.svg" alt="chile">
+                </button>
+                <div class="px-4">
+                  <h3>Pesos Chilenos</h3>
+                  <p>CLP</p>
+                </div>
+              </div>
+            </button>
+          <div class="lg:pb-2 lg:pt-4 balance-price 2xl:pb-5 2xl:pt-8 md:pb-2 md:pt-4 ">
+            <div class="flex items-center justify-between">
+              <div class="price-details">
+                <h2>$ {{clpPrice}}</h2>
+                <p>{{usdtPrice}} USDT</p>
+              </div>
+              <div class="bg-transparent ">
+                <img src="assets/graph/graph1.svg" alt="chile">
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 pb-5 chilean-bottom ">
+            <div class="flex items-center justify-between">
+              <div class="chilean-bottom-details1">
+                <p>PnL Daily</p>
+              </div>
+              <div class="chilean-bottom-details2">
+                <p>+$16.78</p>
+              </div>
+              <div class="chilean-bottom-details3">
+                <p>+16.78 %</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/4 md:p-2 lg:p-2 2xl:p-4">
+        <div class="cursor-pointer top-item chilean-pesos">
+          <div class="flex items-center justify-start top-content">
+            <button type="button" class="top-content-btn" >
+              <img src="assets/logos/usdt.svg" alt="chile">
+            </button>
+            <div class="px-4">
+              <h3>Tether</h3>
+              <p>USDT</p>
+            </div>
+          </div>
+          <div class="lg:pb-2 lg:pt-4 balance-price 2xl:pb-5 2xl:pt-8 md:pb-2 md:pt-4 ">
+            <div class="flex items-center justify-between">
+              <div class="price-details">
+                <h2>{{usdtPrice}} Usdt</h2>
+                <p>$ {{clpPrice}}</p>
+              </div>
+              <div class="bg-transparent ">
+                <img src="assets/graph/graph2.svg" alt="chile">
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 pb-5 chilean-bottom ">
+            <div class="flex items-center justify-between">
+              <div class="chilean-bottom-details1">
+                <p>PnL Daily</p>
+              </div>
+              <div class="chilean-bottom-details2">
+                <p>+$16.78</p>
+              </div>
+              <div class="chilean-bottom-details3">
+                <p>+16.78 %</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="w-1/4 md:p-2 lg:p-2 2xl:p-4">
+        <div class="cursor-pointer top-item chilean-pesos " >
+          <div class="flex items-center justify-start top-content">
+            <button type="button" class="top-content-btn">
+              <img src="assets/logos/rwa.svg" alt="chile">
+            </button>
+            <div class="px-4">
+              <h3>Mis Activos RWA</h3>
+              <p>RWA</p>
+            </div>
+          </div>
+          <div class="lg:pb-2 lg:pt-4 balance-price 2xl:pb-5 2xl:pt-8 md:pb-2 md:pt-4 ">
+            <div class="flex items-center justify-between">
+              <div class="price-details">
+                <h2>$16.000.000 </h2>
+                <p>17.021 USDT</p>
+              </div>
+              <div class="bg-transparent ">
+                <img src="assets/graph/graph3.svg" alt="chile">
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 pb-5 chilean-bottom ">
+            <div class="flex items-center justify-between">
+              <div class="chilean-bottom-details2">
+                <p>Ver mis Activos</p>
+              </div>
+              <div class="chilean-bottom-details2">
+                <p><i class="fa-solid fa-eye"></i></p>
+              </div>
+              <div class="chilean-bottom-details3">
+                <p>+16.78 %</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- menubar -->
+  <div class="flex w-full md:p-2 lg:p-2 2xl:p-4">
+    <div class="flex items-center justify-between w-full nav-bar">
+        <div class="title">
+          <h2>MarketPlace</h2>
+        </div>
+        <div class="flex items-center justify-start menu">
+          <ul class="flex items-center nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Casa/Depto</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Neuvo/Usado</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Precio</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Dormitorios</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Banos</a></li>
+          </ul>
+          <div class="search-bar">
+              <div class="relative w-full form-group">
+                <input type="text"
+                  class="form-control" name="" id="" aria-describedby="helpId" placeholder="Search...">
+                <button type="button" class="absolute top-0 right-0 h-full">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="market-area">
+      <div class="flex">
+        <div class="w-4/12">
+          <div class="p-4 market-item">
+              <div class="relative top-bar">
+                  <img src="assets/pic/market1.png" alt="" class="w-full h-auto rounded-md">
+                  <div class="absolute top-0 bottom-0 left-0 right-0 w-full h-full overly-topbar">
+                    <div class="flex flex-col items-start justify-between w-full h-full p-4">
+                      <div class="flex items-center justify-between w-full">
+                          <button class="rentail-btn" type="button">Rental Property</button>
+                          <button class="fvt-btn" type="button">
+                            <i class="fa-regular fa-heart"></i>
+                          </button>
+                      </div>
+                      <div class="w-full progressbar-area">
+                          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 progressbar">
+                            <div class="bg-blue-600 h-2.5 rounded-full progressbar-line" style="width: 45%"></div>
+                          </div>
+                         <div class="flex justify-between w-full p-3">
+                          <p>60%</p>
+                          <p>132 token left</p>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="py-5 market-body">
+                  <div class="flex items-center justify-between">
+                      <div class="price-button">
+                          <button type="button">$6,210,000  USD <span>Starting Price</span></button>
+                      </div>
+                      <div class="px-4 price">
+                        <p>14.1 % TIR</p>
+                      </div>
+                  </div>
+                  <div class="p-5">
+                      <div class="market-details">
+                        <h2>Modern 5 -Bed Luxury Villa</h2>
+                        <div class="flex py-3">
+                          <img src="assets/icons/location.svg" alt="location">
+                          <p class="mx-3">350 LivingstonRd, Linden, New jersey</p>
+                        </div>
+                        <div class="flex my-4">
+                            <div class="flex items-center bath-details">
+                                <img src="assets/icons/bath.svg" alt="bath">
+                                <p class="px-2">2 Bath</p>
+                            </div>
+                            <div class="flex items-center pl-5 bath-details">
+                              <img src="assets/icons/bedroom.svg" alt="bedroom">
+                              <p class="px-2">2 Bed room</p>
+                          </div>
+                          <div class="flex items-center pl-5 bath-details">
+                              <img src="assets/icons/sqft.svg" alt="sqft">
+                              <p class="px-2">750 sqft</p>
+                          </div>
+                        </div>
+                        <div class="flex status">
+                            <div class="w-4/12">
+                              <div class="flex flex-col items-center justify-center">
+                                <p>36 %</p>
+                                <h4 class="py-2">Expected Return</h4>
+                                <img src="assets/icons/expected.svg" alt="expected">
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <div class="flex flex-col items-center justify-center">
+                                <p>4.10%</p>
+                                <h4 class="py-2">Dividend Yield</h4>
+                                <img src="assets/icons/dividend.svg" alt="dividend">
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <div class="flex flex-col items-center justify-center">
+                                <p>Monthly</p>
+                                <h4 class="py-2">Dividend Frequency</h4>
+                                <img src="assets/icons/frequency.svg" alt="frequency">
+                              </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 bottom-action">
+                            <button type="button" (click)="compare()">Comprar</button>
+                            <h2>$14,284</h2>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="w-4/12">
+          <div class="p-4 market-item">
+              <div class="relative top-bar">
+                  <img src="assets/pic/market1.png" alt="" class="w-full h-auto rounded-md">
+                  <div class="absolute top-0 bottom-0 left-0 right-0 w-full h-full overly-topbar">
+                    <div class="flex flex-col items-start justify-between w-full h-full p-4">
+                      <div class="flex items-center justify-between w-full">
+                          <button class="rentail-btn" type="button">Rental Property</button>
+                          <button class="fvt-btn" type="button">
+                            <i class="fa-regular fa-heart"></i>
+                          </button>
+                      </div>
+                      <div class="w-full progressbar-area">
+                          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 progressbar">
+                            <div class="bg-blue-600 h-2.5 rounded-full progressbar-line" style="width: 45%"></div>
+                          </div>
+                         <div class="flex justify-between w-full p-3">
+                          <p>60%</p>
+                          <p>132 token left</p>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="py-5 market-body">
+                  <div class="flex items-center justify-between">
+                      <div class="price-button">
+                          <button type="button">$6,210,000  USD <span>Starting Price</span></button>
+                      </div>
+                      <div class="px-4 price">
+                        <p>14.1 % TIR</p>
+                      </div>
+                  </div>
+                  <div class="p-5">
+                      <div class="market-details">
+                        <h2>Modern 5 -Bed Luxury Villa</h2>
+                        <div class="flex py-3">
+                          <img src="assets/icons/location.svg" alt="location">
+                          <p class="mx-3">350 LivingstonRd, Linden, New jersey</p>
+                        </div>
+                        <div class="flex my-4">
+                            <div class="flex items-center bath-details">
+                                <img src="assets/icons/bath.svg" alt="bath">
+                                <p class="px-2">2 Bath</p>
+                            </div>
+                            <div class="flex items-center pl-5 bath-details">
+                              <img src="assets/icons/bedroom.svg" alt="bedroom">
+                              <p class="px-2">2 Bed room</p>
+                          </div>
+                          <div class="flex items-center pl-5 bath-details">
+                              <img src="assets/icons/sqft.svg" alt="sqft">
+                              <p class="px-2">750 sqft</p>
+                          </div>
+                        </div>
+                        <div class="flex status">
+                            <div class="w-4/12">
+                              <div class="flex flex-col items-center justify-center">
+                                <p>36 %</p>
+                                <h4 class="py-2">Expected Return</h4>
+                                <img src="assets/icons/expected.svg" alt="expected">
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <div class="flex flex-col items-center justify-center">
+                                <p>4.10%</p>
+                                <h4 class="py-2">Dividend Yield</h4>
+                                <img src="assets/icons/dividend.svg" alt="dividend">
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <div class="flex flex-col items-center justify-center">
+                                <p>Monthly</p>
+                                <h4 class="py-2">Dividend Frequency</h4>
+                                <img src="assets/icons/frequency.svg" alt="frequency">
+                              </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 bottom-action">
+                            <button type="button" class="active" (click)="compare()">Comprar</button>
+                            <h2>$14,284</h2>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="w-4/12">
+          <div class="p-4 market-item">
+              <div class="relative top-bar">
+                  <img src="assets/pic/market1.png" alt="" class="w-full h-auto rounded-md">
+                  <div class="absolute top-0 bottom-0 left-0 right-0 w-full h-full overly-topbar">
+                    <div class="flex flex-col items-start justify-between w-full h-full p-4">
+                      <div class="flex items-center justify-between w-full">
+                          <button class="rentail-btn" type="button">Rental Property</button>
+                          <button class="fvt-btn" type="button">
+                            <i class="fa-regular fa-heart"></i>
+                          </button>
+                      </div>
+                      <div class="w-full progressbar-area">
+                          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 progressbar">
+                            <div class="bg-blue-600 h-2.5 rounded-full progressbar-line" style="width: 45%"></div>
+                          </div>
+                         <div class="flex justify-between w-full p-3">
+                          <p>60%</p>
+                          <p>132 token left</p>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="py-5 market-body">
+                  <div class="flex items-center justify-between">
+                      <div class="price-button">
+                          <button type="button">$6,210,000  USD <span>Starting Price</span></button>
+                      </div>
+                      <div class="px-4 price">
+                        <p>14.1 % TIR</p>
+                      </div>
+                  </div>
+                  <div class="p-5">
+                      <div class="market-details">
+                        <h2>Modern 5 -Bed Luxury Villa</h2>
+                        <div class="flex py-3">
+                          <img src="assets/icons/location.svg" alt="location">
+                          <p class="mx-3">350 LivingstonRd, Linden, New jersey</p>
+                        </div>
+                        <div class="flex my-4">
+                            <div class="flex items-center bath-details">
+                                <img src="assets/icons/bath.svg" alt="bath">
+                                <p class="px-2">2 Bath</p>
+                            </div>
+                            <div class="flex items-center pl-5 bath-details">
+                              <img src="assets/icons/bedroom.svg" alt="bedroom">
+                              <p class="px-2">2 Bed room</p>
+                          </div>
+                          <div class="flex items-center pl-5 bath-details">
+                              <img src="assets/icons/sqft.svg" alt="sqft">
+                              <p class="px-2">750 sqft</p>
+                          </div>
+                        </div>
+                        <div class="flex status">
+                            <div class="w-4/12">
+                              <div class="flex flex-col items-center justify-center">
+                                <p>36 %</p>
+                                <h4 class="py-2">Expected Return</h4>
+                                <img src="assets/icons/expected.svg" alt="expected">
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <div class="flex flex-col items-center justify-center">
+                                <p>4.10%</p>
+                                <h4 class="py-2">Dividend Yield</h4>
+                                <img src="assets/icons/dividend.svg" alt="dividend">
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <div class="flex flex-col items-center justify-center">
+                                <p>Monthly</p>
+                                <h4 class="py-2">Dividend Frequency</h4>
+                                <img src="assets/icons/frequency.svg" alt="frequency">
+                              </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 bottom-action">
+                            <button type="button" (click)="compare()">Comprar</button>
+                            <h2>$14,284</h2>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

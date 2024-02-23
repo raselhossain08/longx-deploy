@@ -1,0 +1,61 @@
+<div class="w-full overflow-x-hidden login-area">
+    <div class="flex w-full ">
+        <div class="w-2/4 left-login-content">
+            <div class="w-10/12 p-5 mx-auto content">
+              <div class="top-content">
+                  <img src="assets/Logo.svg" alt="">
+              </div>
+              <div class="pt-20 pb-10 hello-conote-contents">
+                <h2>Crea tu cuenta  👋</h2>
+              </div>
+              <div class="login-form">
+                <form class="w-3/4" [formGroup]="login">
+                  <div class="flex flex-col mb-4 form-group">
+                    <label for="email">Correo</label>
+                    <input type="email"
+                      class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="example@gmail.com" required formControlName="email">
+                  </div>
+                  <div class="relative flex flex-col mb-4 form-group">
+                    <label for="password">Contrasana</label>
+                    <input [type]="showPass? 'text':'password'"
+                      class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="" required formControlName="password">
+                      <button type="button" class="absolute h-full show-pass" (click)="showPass=!showPass">
+                        <i class="fa-solid" [ngClass]="showPass? 'fa-eye-slash':'fa-eye'"></i>
+                      </button>
+                  </div>
+                  <div class="py-4 form-check checkbox" >
+                    <label class="text-white form-check-label">
+                      <input type="checkbox" class=" form-check-input" name="" id="" value="checkedValue" (click)="isCheckbox()" [ngClass]="checkbox ? 'activeCheck':''">
+   Al crear tu cuenta estas aceptando la politica de privacidad terminos y condiciones
+                    </label>
+                  </div>
+                  <div class="py-5 login-btn">
+                      <button type="button" class="btn" (click)="loginSubmit()">
+                        Empezar
+                      </button>
+                  </div>
+                  <div class="flex items-center justify-between or">
+                      <div class="divider"></div>
+                      <div class="or-text ">
+                        o
+                      </div>
+                      <div class="divider"></div>
+                  </div>
+                  <div class="py-5 google-btn">
+                      <button type="button" class="flex items-center justify-start px-10 btn">
+                        <img src="assets/icons/google.svg" alt="google" class="w-2/4">
+                        <span class="w-3/4">Continuar con google</span>
+                      </button>
+                  </div>
+                  <div class="flex items-center justify-center w-full py-4 text-center already-account">
+                      <p class="w-full text-center">Ya tienes una cuenta? <a routerLink="/register">Entre aquí</a></p>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="w-2/4 h-full overflow-hidden right-login-content">
+            <img src="assets/login/loginBg.png" alt="loginBg" class="w-full h-full">
+        </div>
+    </div>
+</div>

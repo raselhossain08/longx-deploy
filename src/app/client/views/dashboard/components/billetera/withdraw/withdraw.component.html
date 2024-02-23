@@ -1,0 +1,296 @@
+<div class="p-5 deposit-area">
+  <div class="flex">
+    <div class="w-8/12 md:p-2 lg:p-2 2xl:p-4">
+      <div class="p-5 left-content">
+        <div class="flex top-bar">
+          <div class="w-2/4">
+            <div class="title">
+              <h2>Retirar</h2>
+            </div>
+          </div>
+          <div class="relative flex items-center justify-end w-2/4">
+            <button type="button" class="flex items-center justify-between drop-button" (click)="IsSearch = !IsSearch">
+              <img src="assets/flag/chile.svg" alt="clip" class="mr-2" />
+              <p class="mr-2">CLP</p>
+              <div>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+            </button>
+
+            <div class="absolute w-full search-drop" [ngClass]="IsSearch ? 'active' : ''" *ngIf="IsSearch">
+              <div class="p-5 bg-transparent">
+                <div class="relative w-full form-group">
+                  <input type="text" class="w-full form-control" name="" id="" aria-describedby="helpId"
+                    placeholder="Search Currency" />
+                  <button type="button" class="absolute top-0 right-0 h-full">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="flex items-center justify-between p-4 currency-item">
+                <div class="flex items-center justify-start cursor-pointer top-content">
+                  <button type="button" class="top-content-btn">
+                    <img src="assets/flag/chile.svg" alt="chile" />
+                  </button>
+                  <div class="px-4">
+                    <h3>Pesos Chilenos</h3>
+                    <p>CLP</p>
+                  </div>
+                </div>
+                <div class="text-white"></div>
+              </div>
+              <div class="flex items-center justify-between p-4 currency-item">
+                <div class="flex items-center justify-start cursor-pointer top-content">
+                  <button type="button" class="top-content-btn">
+                    <img src="assets/logos/usdt.svg" alt="chile" />
+                  </button>
+                  <div class="px-4">
+                    <h3>Tether</h3>
+                    <p>USDT</p>
+                  </div>
+                </div>
+                <div class="text-white">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+              <div class="flex items-center justify-between p-4 currency-item">
+                <div class="flex items-center justify-start cursor-pointer top-content">
+                  <button type="button" class="top-content-btn">
+                    <img src="assets/logos/Injective.svg" alt="chile" />
+                  </button>
+                  <div class="px-4">
+                    <h3>Injective</h3>
+                    <p>INJ</p>
+                  </div>
+                </div>
+                <div class="text-white"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="py-3 price-box">
+          <div class="flex items-start justify-between">
+            <div class="price-content">
+              <p>Chilean Pesos/CLP</p>
+              <h2 class="py-2">$35,352.02</h2>
+            </div>
+            <div class="price-button">
+              <div class="flex">
+                <button type="button"  [ngClass]="selectBank? '':'active'" (click)="selectBank=!selectBank">Bank</button>
+                <button type="button" [ngClass]="selectBank? 'active':''" (click)="selectBank=!selectBank">QR Code</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- bank -area -->
+        <div class="bank-area" *ngIf="!selectBank">
+          <div class="h-full p-6 bank-details">
+            <h2 class="pb-4">Bank Details</h2>
+            <div class="relative flex flex-col mb-4 form-group">
+              <label for="SelectBank">Select Bank</label>
+              <button type="button" class="flex justify-start w-full SelectBank-btn " (click)="isBankName=!isBankName">
+                <div class="w-3/4 px-3 text-left">
+                  <p>
+                    {{BankName}}
+                  </p>
+                </div>
+                <div class="flex justify-end w-1/4 px-3 text-end">
+                  <button type="button" class="flex items-center justify-end arrow-btn">
+                    <i class="fa-solid" [ngClass]="isBankName? 'fa-angle-up':'fa-angle-down'"></i></button>
+                </div>
+              </button>
+              <div class="absolute left-0 right-0 w-full p-4 rounded-lg dropdown-menu SelectBank-drop"
+                [ngClass]="isBankName? 'active':''" aria-labelledby="triggerId">
+                <div *ngFor="let item of BankList">
+                  <button class="dropdown-item" type="button" (click)="BankNameChange($event)">{{item.name}}</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative flex flex-col mb-4 form-group">
+              <label for="SelectBank">Bank Account</label>
+              <button type="button" class="flex justify-start w-full SelectBank-btn "
+                (click)="isBankNumber=!isBankNumber">
+                <div class="w-3/4 px-3 text-left">
+                  <p>
+                    {{BankNumber}}
+                  </p>
+                </div>
+                <div class="flex justify-end w-1/4 px-3 text-end">
+                  <button type="button" class="flex items-center justify-end arrow-btn">
+                    <i class="fa-solid" [ngClass]="isBankNumber? 'fa-angle-up':'fa-angle-down'"></i></button>
+                </div>
+              </button>
+              <div class="absolute left-0 right-0 w-full p-4 rounded-lg dropdown-menu SelectBank-drop"
+                [ngClass]="isBankNumber? 'active':''" aria-labelledby="triggerId">
+                <div *ngFor="let item of BankNumberList">
+                  <button class="dropdown-item" type="button" (click)="BankNumberChange($event)">{{item.name}}</button>
+                </div>
+              </div>
+            </div>
+            <div class="flex mb-4">
+              <div class="w-2/4">
+                <div class="relative flex flex-col mb-4 form-group">
+                  <label for="SelectBank">Account Type</label>
+                  <button type="button" class="flex justify-start w-full SelectBank-btn "
+                    (click)="isBankType=!isBankType">
+                    <div class="w-3/4 px-3 text-left">
+                      <p>
+                        {{AccountTypeName}}
+                      </p>
+                    </div>
+                    <div class="flex justify-end w-1/4 px-3 text-end">
+                      <button type="button" class="flex items-center justify-end arrow-btn">
+                        <i class="fa-solid" [ngClass]="isBankType? 'fa-angle-up':'fa-angle-down'"></i></button>
+                    </div>
+                  </button>
+                  <div class="absolute left-0 right-0 w-full p-4 rounded-lg dropdown-menu SelectBank-drop"
+                    [ngClass]="isBankType? 'active':''" aria-labelledby="triggerId">
+                    <div *ngFor="let item of AccountTypeList">
+                      <button class="dropdown-item" type="button"
+                        (click)="AccountTypeChange($event)">{{item.name}}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-2/4">
+                <div class="flex flex-col pl-3 form-group">
+                  <label for="RUT">RUT</label>
+                  <input type="text" name="RUT" id="RUTRUT" class="form-control" placeholder="Lorem ipsum">
+                </div>
+              </div>
+            </div>
+            <div class="flex mb-4">
+              <div class="w-2/4">
+                <div class="flex flex-col form-group">
+                  <label for="BusinessName">Business Name</label>
+                  <input type="text" name="BusinessName" id="BusinessName" class="form-control" placeholder="Lorem ipsum"
+                    >
+                </div>
+              </div>
+              <div class="w-2/4">
+                <div class="flex flex-col pl-3 form-group">
+                  <label for="Mail">Mail</label>
+                  <input type="text" name="Mail" id="Mail" class="form-control" placeholder="Lorem ipsum@gmail.com"
+                    >
+                </div>
+              </div>
+            </div>
+            <div class="flex mb-4">
+              <div class="w-2/4">
+                <div class="flex flex-col form-group">
+                  <label for="ConfirmAmount">Confirm Ammount</label>
+                  <div class="relative">
+                    <input type="text" name="ConfirmAmount" id="ConfirmAmount" class="w-full px-10 form-control" placeholder="Lorem ipsum">
+                    <button type="button" class="absolute top-0 bottom-0 left-0 px-4">$</button>
+                  </div>
+                </div>
+              </div>
+              <div class="w-2/4">
+                <div class="flex flex-col pl-3 form-group">
+                  <label for="file">Attach file</label>
+                  <div class="flex items-center justify-between file-input">
+                    <div>
+                        <label for="file">
+                          <p>
+                          {{uploadPhoto}}
+                        </p>
+                      </label>
+                    </div>
+                    <div>
+                      <label for="file">
+                        <img src="assets/icons/uploadFile.svg" alt="uploadFile">
+                      </label>
+                    </div>
+                    <input type="file" class="hidden" id="file" [(ngModel)]="uploadPhoto">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="py-5 save-button">
+              <button type="button" class="btn">Deposit</button>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 bank-qr" *ngIf="selectBank">
+          <div class="py-4 title">
+            <p>Scan Code to Make Payment</p>
+          </div>
+            <div class="flex justify-center w-full py-4 text-center qr-code-box">
+                <img src="assets/logos/qrCode.svg" alt="qrCode">
+            </div>
+
+            <div class="relative flex flex-col mb-4 form-group">
+              <label for="SelectBank">Select Bank</label>
+              <button type="button" class="flex justify-start w-full SelectBank-btn " (click)="isNetwork=!isNetwork">
+                <div class="w-3/4 px-3 text-left">
+                  <p>
+                    {{BankName}}
+                  </p>
+                </div>
+                <div class="flex justify-end w-1/4 px-3 text-end">
+                  <button type="button" class="flex items-center justify-end arrow-btn">
+                    <i class="fa-solid" [ngClass]="isNetwork? 'fa-angle-up':'fa-angle-down'"></i></button>
+                </div>
+              </button>
+              <div class="absolute left-0 right-0 w-full p-4 rounded-lg dropdown-menu SelectBank-drop"
+                [ngClass]="isNetwork? 'active':''" aria-labelledby="triggerId">
+                <div *ngFor="let item of NetworkList">
+                  <button class="dropdown-item" type="button" (click)="BankNameChange($event)">{{item.name}}</button>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col w-full h-full form-group">
+              <label for="ValuePerUsdt">Address</label>
+              <div class="relative w-full">
+                <input type="text" name="ValuePerUsdt" id="ValuePerUsdt" class="w-full form-control"
+                  placeholder="RED TRON TRC-20" [(ngModel)]="clipboardText" value={{clipboardText}}
+                  formControlName="DepositTotalAddress" />
+                <button type="button" class="absolute btn-copy" data-toggle="button"
+                  [cdkCopyToClipboard]="clipboardText">
+                  Copiar
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <div class="py-5 save-button">
+              <button type="button" class="btn">Deposit</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-4/12 md:p-2 lg:p-2 2xl:p-4">
+        <div class="px-6 py-5 transaction-history">
+          <div class="flex justify-between top-text">
+            <p>Ultimos Deposito</p>
+            <button>View More</button>
+          </div>
+          <div *ngFor="let items of history" class="">
+            <div class="flex items-center py-2 transaction-table-body">
+              <div class="w-3/12 text-center coin">
+                <div class="flex items-center">
+                  <div class="flex items-center justify-center coin-box">
+                    <img [src]="items.flag" alt="chile" />
+                  </div>
+                  <div class="pl-3 coin-content">
+                    <h4>{{ items.coinName }}</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="w-3/12 text-center type">
+                <p [class]="items.typeBg">{{ items.type }}</p>
+              </div>
+              <div class="w-3/12 text-center Date">
+                <p>{{ items.time }}</p>
+              </div>
+
+              <div class="w-3/12 text-center State">
+                <p [class]="items.stateC">{{ items.state }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

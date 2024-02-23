@@ -1,0 +1,30 @@
+<div class="sidebar-content">
+    <div class="nav-bar">
+      <ul class="nav">
+        <li class="nav-item " *ngFor="let menu of MenuData">
+          <a routerLink={{menu.url}} routerLinkActive="active"  class="nav-link">
+            <img src={{menu.icon}} alt={{menu.name}}>
+            <span>{{menu.name}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-bar-bottom">
+      <div class="nav-bar">
+        <ul class="nav">
+          <li class="nav-item ">
+            <a routerLink="support" routerLinkActive="active"  class="nav-link">
+              <img src="/assets/icons/Support.svg" alt="Support">
+              <span>Support</span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <button type="button" (click)="logout()"  class="nav-link">
+              <img src="/assets/icons/logout.svg" alt="Logout">
+              <span>Logout</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>

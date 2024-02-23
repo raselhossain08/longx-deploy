@@ -1,0 +1,730 @@
+.left-content{
+  background: rgba(28, 28, 38, 1);
+  box-shadow: 4px 4px 33px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  .title{
+    h2{
+      font-family: "Poppins",sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 27px;
+      letter-spacing: 0.03em;
+      text-align: left;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+.drop-button{
+  padding: 8px 20px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 1);
+  height: 46px;
+  p{
+    color: rgba(255, 255, 255, 1);
+    font-family: "Poppins",sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}
+.search-drop{
+  background: linear-gradient(180.21deg, #15151F 0.19%, #2C2C3A 113.02%, #1B1B26 113.02%),
+  linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  top: 71px;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+  display: none;
+  &.active{
+    display: block !important;
+  }
+  input{
+    height: 40px;
+    border-radius: 8px;
+    padding: 5px 20px;
+    background: rgba(255, 255, 255, 0.04);
+    font-family: "Poppins",sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+
+  }
+  button{
+    padding: 0 15px;
+    color: rgba(255, 255, 255, 1);
+  }
+  .currency-item{
+    background-color: rgba(20, 20, 28, 1);
+    border:1px solid rgba(255, 255, 255, 0.1);
+    .top-content-btn{
+      height: auto;
+      width: auto;
+      padding: 10px 10px;
+    }
+    .top-content {
+      p {
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: rgba(255, 255, 255, 1);
+      }
+      h3{
+        font-family: "Poppins",sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}
+.price-box {
+  .price-content{
+    p{
+      font-family: "Poppins",sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    h2{
+      font-family: "Poppins",sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 27px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  .price-button{
+    border: 1px solid rgba(49, 53, 63, 1);
+    padding: 5px;
+    border-radius: 8px;
+    button{
+      padding: 7px 25px;
+      border-radius: 4px;
+      background-color: transparent;
+      margin: 0 4px;
+      font-family: "Poppins",sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: rgba(255, 255, 255, 1);
+      &.active{
+        background-color: rgba(220, 34, 34, 1);
+      }
+    }
+  }
+}
+
+
+
+.bank-details{
+  background-color: rgba(28, 28, 38, 1);
+  box-shadow: 4px 4px 33px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  min-height: auto;
+  max-height: 100%;
+  h2{
+    font-family: "Poppins", sans-serif;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+  }
+  .form-group {
+    label {
+      font-family: "Poppins", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 10px 0;
+    }
+    .file-input{
+      height: 54px;
+      background-color: rgba(20, 20, 28, 1);
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 21px;
+      letter-spacing: 0em;
+      color: rgba(255, 255, 255, 1);
+    }
+    input {
+      height: 54px;
+      background-color: rgba(20, 20, 28, 1);
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 21px;
+      letter-spacing: 0em;
+      color: rgba(255, 255, 255, 1);
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  .SelectBank-btn{
+    height: 54px;
+    background-color: rgba(20, 20, 28, 1);
+    padding: 10px 35px;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0em;
+    color: rgba(255, 255, 255, 1);
+    i{
+      animation: growDown 300ms ease-in-out forwards;
+      transform-origin: top center;
+
+    }
+    .arrow-btn{
+      background: rgba(255, 255, 255, 0.05);
+      height: 30px;
+      width: 30px;
+      border-radius: 25px;
+    }
+  }
+  .SelectBank-drop{
+    background-color: rgba(20, 20, 28, 1);
+    top: 101%;
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+    display: none;
+    padding-top: 10px;
+    z-index: 54;
+    &.active{
+      display: block !important;
+    }
+   button{
+    padding: 10px 25px;
+   }
+
+  }
+
+}
+
+.save-button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .btn {
+      background: linear-gradient(91.44deg, #c20505 1.23%, #f84f4f 99.73%);
+      box-shadow: 4px 4px 32px 0px rgba(103, 90, 255, 0.07);
+      width: 206px;
+      height: 44px;
+      padding: 10px;
+      border-radius: 10px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 21px;
+      letter-spacing: 0em;
+      color: rgba(255, 255, 255, 1);
+    }
+
+}
+
+.transaction-history {
+
+  min-height: 514px;
+  max-height: 100%;
+  box-shadow: 4px 4px 33px 0px rgba(0, 0, 0, 0.05);
+  background: rgba(28, 28, 38, 1);
+  border-radius: 10px;
+  .top-text {
+    p {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 27px;
+      letter-spacing: 0.03em;
+      text-align: left;
+      color: rgba(255, 255, 255, 1);
+    }
+
+    button {
+      font-family: "Poppins", sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: rgba(255, 255, 255, 1);
+      border: 1px solid rgba(49, 53, 63, 1);
+      width: 80px;
+      height: 40px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+// background color
+.buyC {
+  background-color: rgba(37, 59, 56, 1);
+  color: rgba(86, 237, 155, 1);
+}
+
+.sellC {
+  background-color: rgba(70, 44, 53, 1);
+  color: rgba(255, 120, 120, 1);
+}
+
+.exchangeC {
+  background-color: rgba(38, 53, 60, 1);
+  color: rgba(102, 237, 229, 1);
+}
+
+.withdrawC {
+  background-color: rgba(255, 146, 45, 0.15);
+  color: rgba(255, 182, 114, 1);
+}
+
+.depositC {
+  color: rgba(255, 240, 103, 1);
+  background: rgba(255, 240, 103, 0.15);
+}
+
+.pendingC {
+  color: rgba(249, 191, 104, 1);
+}
+
+.doneC {
+  color: rgba(64, 218, 132, 1);
+}
+
+.canceledC {
+  color: rgba(248, 118, 117, 1);
+}
+
+.transaction-table-body {
+  .Date {
+    p {
+      font-family: "Poppins", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      color: rgba(255, 255, 255, 1);
+      text-transform: capitalize;
+    }
+  }
+
+  .coin {
+    .coin-box {
+      background-color: rgba(49, 53, 63, 1);
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+    }
+
+    .coin-content {
+      h4 {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: rgba(255, 255, 255, 1);
+        text-transform: capitalize;
+      }
+
+      p {
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-transform: capitalize;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
+  .type {
+    p {
+      font-family: "Poppins", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      display: inline-block;
+      padding: 7px 20px;
+      border-radius: 20px;
+      text-transform: capitalize;
+    }
+  }
+
+  .Amount {
+    p {
+      font-family: "Poppins", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      color: rgba(255, 255, 255, 1);
+      text-transform: capitalize;
+    }
+  }
+
+  .State {
+    p {
+      font-family: "Poppins", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-transform: capitalize;
+    }
+  }
+
+  button {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+}
+
+.bank-qr{
+  .title{
+    p{
+      font-family: "Poppins",sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  .SelectBank-btn{
+    height: 54px;
+    background-color: rgba(20, 20, 28, 1);
+    padding: 10px 35px;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0em;
+    color: rgba(255, 255, 255, 1);
+    i{
+      animation: growDown 300ms ease-in-out forwards;
+      transform-origin: top center;
+
+    }
+    .arrow-btn{
+      background: rgba(255, 255, 255, 0.05);
+      height: 30px;
+      width: 30px;
+      border-radius: 25px;
+    }
+  }
+  .SelectBank-drop{
+    background-color: rgba(20, 20, 28, 1);
+    top: 101%;
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+    display: none;
+    padding-top: 10px;
+    z-index: 54;
+    &.active{
+      display: block !important;
+    }
+   button{
+    padding: 10px 25px;
+   }
+
+  }
+  .form-group {
+    label {
+      font-family: "Poppins", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 10px 0;
+    }
+    .file-input{
+      height: 54px;
+      background-color: rgba(20, 20, 28, 1);
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 21px;
+      letter-spacing: 0em;
+      color: rgba(255, 255, 255, 1);
+    }
+    input {
+      height: 54px;
+      background-color: rgba(20, 20, 28, 1);
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 21px;
+      letter-spacing: 0em;
+      color: rgba(255, 255, 255, 1);
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+.btn-copy {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: 80%;
+  background-color: rgba(32, 32, 39, 1);
+  padding: 8px 25px;
+  border-radius: 4px;
+
+  i {
+    margin: 0 8px;
+  }
+}
+.address-area{
+  input{
+    padding: 10px 123px !important;
+  }
+}
+.address-text{
+  padding: 5px 20px;
+  p{
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+  }
+
+
+}
+.form-check {
+  label {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  input[type="checkbox"] {
+    position: relative;
+    border: 2px solid rgba(248, 79, 79, 1);
+    border-radius: 2px;
+    background: none;
+    cursor: pointer;
+    line-height: 0;
+    margin: 0 0.6em 0 0;
+    outline: 0;
+    padding: 0 !important;
+    vertical-align: text-top;
+    height: 20px;
+    width: 20px;
+    -webkit-appearance: none;
+    opacity: 0.5;
+  }
+
+  input[type="checkbox"]:hover {
+    opacity: 1;
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: rgba(248, 79, 79, 1);
+    opacity: 1;
+  }
+
+  .activeCheck:before {
+    content: "";
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    width: 4px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    margin: -1px -1px 0 -1px;
+    transform: rotate(45deg) translate(-50%, -50%);
+    z-index: 2;
+  }
+}
+.select-address-btn2{
+  background-color: rgba(220, 34, 34, 1);
+  font-family: "Poppins",sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+  width: auto;
+  height: 80%;
+  border-radius: 4px;
+  margin: auto;
+  padding: 0px 25px;
+  margin: 10px;
+}
+.select-address-btn{
+  color: rgba(86, 237, 155, 1);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  span{
+    color: rgba(86, 237, 155, 1);
+  }
+  i{
+    width: 22px;
+    height: 22px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+.select-address{
+  background: linear-gradient(180.21deg, #15151F 0.19%, #2C2C3A 113.02%, #1B1B26 113.02%),
+  linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 313px;
+  height: auto;
+  top: 55px;
+  border-radius: 8px;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+  display: none;
+  z-index: 54;
+  &.active{
+    display: block !important;
+  }
+  .top-bar{
+    h2{
+      font-family: "Poppins",sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: rgba(86, 237, 155, 1);
+    }
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  }
+  .address-list{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(39, 39, 52, 1);
+    h4{
+      font-family: "Poppins",sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: rgba(255, 255, 255, 1);
+    }
+    p{
+      font-family: "Poppins",sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: rgba(255, 255, 255, 1);
+    }
+    i{
+      color: rgba(255, 255, 255, 1);
+    }
+    i{
+      display: none;
+    }
+    &.active{
+      background-color:  rgba(20, 20, 28, 1);
+      i{
+        display: block;
+      }
+    }
+  }
+}
+@keyframes  growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}

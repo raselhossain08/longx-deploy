@@ -1,0 +1,30 @@
+<div class="register-area">
+    <div class="w-6/12 p-10 mx-auto shadow-xl rounded-2xl">
+      <h1 class="my-3">Create Admin Account</h1>
+      <form action="" [formGroup]="register">
+        <div class="mb-2 form-group">
+          <label for="name">Name</label>
+          <input type="text"
+            class="capitalize form-control" name="name" id="name"  placeholder="" formControlName="name">
+        </div>
+        <div class="mb-2 form-group">
+          <label for="email">Email</label>
+          <input type="email"
+            class="form-control" name="email" id="email"  placeholder="" formControlName="email">
+        </div>
+
+        <div class="mb-2 form-group">
+          <label for="password">Password</label>
+          <input type="password"
+            class="form-control" name="password" id="password"  placeholder="" formControlName="password">
+        </div>
+        <div class="pt-3 my-3 text-center submit_btn">
+          <button type="button" class="shadow-lg" (click)="createUser()"> Register</button>
+        </div>
+        <!-- already account -->
+        <div class="w-full already_have">
+          <p class="text-center"> Already have an account <a routerLink="/admin/login" class="mx-2">Login</a></p>
+        </div>
+      </form>
+    </div>
+</div>

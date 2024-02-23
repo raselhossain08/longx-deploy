@@ -1,0 +1,74 @@
+<div class="w-full p-5 overflow-x-hidden">
+  <div class="w-full top-bar">
+    <div class="flex items-center justify-start">
+      <div class="w-4/12 p-4">
+        <div class="flex items-center w-full item-box">
+          <div class="w-2/4">
+            <div class="profile-content">
+              <h4>Verification</h4>
+              <button type="button" class="block py-2 underline" (click)="companyVerification=true;PersonVerification=false">Verificar Empresa</button>
+              <button type="button" class="block underline" (click)="PersonVerification=true;companyVerification=false">Verificar Persona</button>
+            </div>
+          </div>
+          <div class="flex items-center justify-center w-2/4 ">
+            <div class="profile-photo">
+              <img src="assets/avatar/profile.png" alt="profile">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-4/12 p-4">
+        <div class="flex items-center w-full item-box">
+          <div class="w-2/4">
+            <div class="change-password">
+              <h4>Password</h4>
+              <a href="#">Change or Reset your Account password.</a>
+            </div>
+          </div>
+          <div class="flex items-center justify-center w-2/4 ">
+            <div class="change-password-btn">
+              <button type="button" class="btn" (click)="updatePassword=true">Change</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-4/12 p-4">
+        <div class="flex items-center w-full item-box">
+          <div class="w-2/4">
+            <div class="two-factor">
+              <h4>Two-Factor Authentication</h4>
+              <a href="#">Secure your wallet by enablingTwo-factor authentication</a>
+            </div>
+          </div>
+          <div class="flex items-center justify-end w-2/4 ">
+            <div class="flex items-center justify-end two-factor-btn">
+              <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                <input type="checkbox" value="true" class="sr-only peer" (click)="twoFactor=!twoFactor" [checked]="twoFactor">
+                <div
+                  class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-300 dark:peer-focus:ring-red-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600">
+                </div>
+
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Personal Details -->
+  <app-personal-details></app-personal-details>
+</div>
+
+<!-- .Company Verification -->
+<app-company-verification *ngIf="companyVerification"></app-company-verification>
+<!-- step 1 -->
+
+<!-- Person Verification-->
+<app-person-verification *ngIf="PersonVerification"></app-person-verification>
+<!-- 2-Factor Authentication -->
+<app-factor-authentication *ngIf="twoFactor"></app-factor-authentication>
+<!-- Change Password -->
+<app-update-password *ngIf="updatePassword"></app-update-password>
+
+
+
